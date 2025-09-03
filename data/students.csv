@@ -1,0 +1,6 @@
+Name,Firstname,BornMonth,BornYear,Weight,Height,Gender,YearsInR,YearsInPython,YearsInResearch,City,Lab
+Gra,Mar,6,2002,50,160,F,1,1,1,Montpellier,EuroMov
+Loc,Jea,5,2001,70,178,M,1,1,1,Montpellier,EuroMov
+Pen,Mar,6,2002,84,182,M,0,0,1,Toulouse,U528
+Biw,Bie,2,1980,84,178,M,0,0,3,Saint Etienne,BioMontpellier
+Sam,Mar,4,2002,63,167,F,0,0,0,Montpellier,None
