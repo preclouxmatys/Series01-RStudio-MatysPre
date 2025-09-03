@@ -42,10 +42,28 @@ library(tidyverse)
 
 students <- read_csv("data/students.csv")
 
-# Histogramme de la variable Weight
+# Histogramme de la variable Weight with copilot 
+hist(data$Weight,
+     main = "weight histogram",
+     xlab = "weight",
+     col = "blue",
+     border = "black")
+```
+```
+```{r}
+```{r}
+# Densité de la variable Weight with chatgpt 
 ggplot(students, aes(x = Weight)) +
-  geom_histogram(binwidth = 2.5, fill = "skyblue", color = "black") +
-  labs(title = "Histogram of Weight", x = "Weight (kg)", y = "Count")
+  geom_density(fill = "lightgreen", alpha = 0.5) +
+  labs(title = "Density plot of Weight", x = "Weight (kg)", y = "Density")
+```
+```
+```{r}
+```{r}
+# Boxplot de la variable Weight with chatgpt 
+ggplot(students, aes(y = Weight)) +
+  geom_boxplot(fill = "orange", color = "black") +
+  labs(title = "Boxplot of Weight", y = "Weight (kg)")
 ```
 ```
 
