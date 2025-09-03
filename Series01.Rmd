@@ -89,4 +89,20 @@ boxplot(Weight ~ Gender, data = data,
         col = c('pink',"blue"))
 ```
 
+
+```{r}
+wilcox.test(Weight ~ Gender, data = students)
+test_result
+```
+```{r}
+install.packages("effectsize")
+library(effectsize)
+
+# Faire le test
+res <- wilcox.test(Weight ~ Gender, data = students, exact = FALSE)
+
+# Calculer taille d'effet
+effectsize(res)
+```
+
 	
