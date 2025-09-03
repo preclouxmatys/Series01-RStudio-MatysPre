@@ -52,18 +52,22 @@ hist(data$Weight,
 ```
 ```{r}
 ```{r}
-# Densité de la variable Weight with chatgpt 
-ggplot(students, aes(x = Weight)) +
-  geom_density(fill = "lightgreen", alpha = 0.5) +
-  labs(title = "Density plot of Weight", x = "Weight (kg)", y = "Density")
+# Densité de la variable Weight with copilot 
+plot(density(data$Weight, na.rm = TRUE),
+     main = "Weight densitogram",
+     xlab = "Weight",
+     ylab = "Density",
+     col = "blue",
+     lwd = 2)
 ```
 ```
 ```{r}
 ```{r}
-# Boxplot de la variable Weight with chatgpt 
-ggplot(students, aes(y = Weight)) +
-  geom_boxplot(fill = "orange", color = "black") +
-  labs(title = "Boxplot of Weight", y = "Weight (kg)")
+# Boxplot de la variable Weight with chat gpt
+boxplot(data$Weight,
+        main = "weight Boxplot",
+        ylab = "weight",
+        col = 'blue')
 ```
 ```
 
