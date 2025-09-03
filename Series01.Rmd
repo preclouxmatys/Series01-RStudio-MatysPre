@@ -69,6 +69,16 @@ boxplot(data$Weight,
         ylab = "weight",
         col = 'blue')
 ```
+```{r}
+## with chatgpt method of the histogram and not copilot
+ggplot(students, aes(x = Weight, fill = Gender)) +
+  geom_histogram(binwidth = 1, color = "white", alpha = 0.7, position = "identity") +
+  scale_fill_manual(values = c("F" = "lightcoral", "M" = "steelblue")) +
+  labs(title = "Histogram of Weight by Gender",
+       x = "Weight (kg)",
+       y = "Count",
+       fill = "Gender") +
+  theme_minimal(base_size = 14)
 ```
 
 	
