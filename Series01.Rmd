@@ -25,6 +25,27 @@ data %>% ## add table
     min = min,
     max = max
   ), na.rm = TRUE) ## skip the missing values
-## the summary is different from one column to the next because the column with not the same type don't have the same summary 
+```
+
+
+```{r}
+## the summary is different from one column to the next because the column with not the same type of character
+```
+```{r}
+summary(data)
+```
+
+
+
+```{r}
+library(tidyverse)
+
+students <- read_csv("data/students.csv")
+
+# Histogramme de la variable Weight
+ggplot(students, aes(x = Weight)) +
+  geom_histogram(binwidth = 2.5, fill = "skyblue", color = "black") +
+  labs(title = "Histogram of Weight", x = "Weight (kg)", y = "Count")
+```
 ```
 
