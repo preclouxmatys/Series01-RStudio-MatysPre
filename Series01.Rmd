@@ -10,3 +10,21 @@ data <- read.csv("data/students.csv")
 summary(data)
 ```
 
+
+```{r}
+## imput tidyverse formule
+library(tidyverse)
+```
+```{r}
+data %>% ## add table 
+  summarise_if(is.numeric, list( ##numeric
+    mean = mean,
+    sd = sd,
+    median = median,
+    quantile = quantile,
+    min = min,
+    max = max
+  ), na.rm = TRUE) ## skip the missing values
+## the summary is different from one column to the next because the column with not the same type don't have the same summary 
+```
+
