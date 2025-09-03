@@ -1,0 +1,74 @@
+---
+title: "Series01.rmd"
+author: "matys"
+date: "2025-09-03"
+output: html_document
+---
+
+```{r}
+data <- read.csv("data/students.csv")
+summary(data)
+```
+
+
+```{r}
+## imput tidyverse formule
+library(tidyverse)
+```
+```{r}
+data %>% ## add table 
+  summarise_if(is.numeric, list( ##numeric
+    mean = mean,
+    sd = sd,
+    median = median,
+    quantile = quantile,
+    min = min,
+    max = max
+  ), na.rm = TRUE) ## skip the missing values
+```
+
+
+```{r}
+## the summary is different from one column to the next because the column with not the same type of character
+```
+```{r}
+summary(data)
+```
+
+
+
+```{r}
+library(tidyverse)
+
+students <- read_csv("data/students.csv")
+
+# Histogramme de la variable Weight with copilot 
+hist(data$Weight,
+     main = "weight histogram",
+     xlab = "weight",
+     col = "blue",
+     border = "black")
+```
+```
+```{r}
+```{r}
+# Densité de la variable Weight with copilot 
+plot(density(data$Weight, na.rm = TRUE),
+     main = "Weight densitogram",
+     xlab = "Weight",
+     ylab = "Density",
+     col = "blue",
+     lwd = 2)
+```
+```
+```{r}
+```{r}
+# Boxplot de la variable Weight with chat gpt
+boxplot(data$Weight,
+        main = "weight Boxplot",
+        ylab = "weight",
+        col = 'blue')
+```
+```
+
+	
