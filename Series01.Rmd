@@ -80,5 +80,13 @@ ggplot(students, aes(x = Weight, fill = Gender)) +
        fill = "Gender") +
   theme_minimal(base_size = 14)
 ```
+```{r}
+## same methode with copilot
+boxplot(Weight ~ Gender, data = data,
+        main = "weight Boxplot",
+        xlab = "gender",
+        ylab = "weight",
+        col = c('pink',"blue"))
+```
 
 	
