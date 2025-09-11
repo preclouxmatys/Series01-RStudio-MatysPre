@@ -64,11 +64,61 @@ plot(density(data$Weight, na.rm = TRUE),
 ```{r}
 ```{r}
 # Boxplot de la variable Weight with chat gpt
+plot(data$Weight, data$Height,
+     main = "Relation entre le poids et la taille",
+     xlab = "Poids (kg)",
+     ylab = "Taille (cm)",
+     pch = 19,                # Points pleins
+     col = "blue")
+
+# Ajout de la droite de régression (modèle linéaire)
+model <- lm(Height ~ Weight, data = data)
+abline(model, col = "red", lwd = 2)
+
+```
+
+
+```{r}
 boxplot(data$Weight,
         main = "weight Boxplot",
         ylab = "weight",
         col = 'blue')
 ```
+```{r}
+## with chatgpt method of the histogram and not copilot
+ggplot(students, aes(x = Weight, fill = Gender)) +
+  geom_histogram(binwidth = 1, color = "white", alpha = 0.7, position = "identity") +
+  scale_fill_manual(values = c("F" = "lightcoral", "M" = "steelblue")) +
+  labs(title = "Histogram of Weight by Gender",
+       x = "Weight (kg)",
+       y = "Count",
+       fill = "Gender") +
+  theme_minimal(base_size = 14)
 ```
+```{r}
+## same methode with copilot
+boxplot(Weight ~ Gender, data = data,
+        main = "weight Boxplot",
+        xlab = "gender",
+        ylab = "weight",
+        col = c('pink',"blue"))
+```
+
+
+```{r}
+wilcox.test(Weight ~ Gender, data = students)
+test_result
+```
+```{r}
+install.packages("effectsize")
+library(effectsize)
+
+# Faire le test
+res <- wilcox.test(Weight ~ Gender, data = students, exact = FALSE)
+
+# Calculer taille d'effet
+effectsize(res)
+```
+
 
 	
