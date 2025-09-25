@@ -88,21 +88,34 @@ boxplot(Weight ~ Gender, data = data,
         ylab = "weight",
         col = c('pink',"blue"))
 ```
-
-
 ```{r}
-wilcox.test(Weight ~ Gender, data = students)
-test_result
-```
-```{r}
-install.packages("effectsize")
 library(effectsize)
 
-# Faire le test
-res <- wilcox.test(Weight ~ Gender, data = students, exact = FALSE)
+# Make sure Gender is a factor
+data$Gender <- as.factor(data$Gender)
 
-# Calculer taille d'effet
-effectsize(res)
+# Run Wilcoxon test
+res <- wilcox.test(Weight ~ Gender, data = data, exact = FALSE, correct = FALSE)
+print(res)
+
+# Extract group sizes
+n1 <- sum(data$Gender == levels(data$Gender)[1])
+n2 <- sum(data$Gender == levels(data$Gender)[2])
+
+# U statistic from Wilcoxon test
+U <- res$statistic
+
+# Expected value and standard deviation of U
+mu <- n1 * n2 / 2
+sigma <- sqrt(n1 * n2 * (n1 + n2 + 1) / 12)
+
+# Z value
+Z <- (U - mu) / sigma
+
+# Rank-biserial correlation
+r <- Z / sqrt(n1 + n2)
+r
+
 ```
 
 	
